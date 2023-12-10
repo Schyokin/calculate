@@ -19,11 +19,17 @@ function calculate(btnValue) {
     
            if(value === "=")
            {
+            try{
             display.value = "";
             arr_input.pop();
             let result = eval(arr_input.join(""))
             arr_input = [];
             display.value = result;
+            } catch{
+                arr_input = [];
+                display.value = "";
+                display.value = "Ошибка!";
+            }
             }
        }
   }
